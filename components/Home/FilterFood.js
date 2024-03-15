@@ -1,6 +1,8 @@
 import { Image, StatusBar, StyleSheet, Text, TextInput, TouchableHighlight, TouchableOpacity, View, FlatList, ScrollView } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
 
 
 const data = [
@@ -40,10 +42,11 @@ const FilterFood = () => {
     );
 
     return (
-        <View style={{ flex: 1 }}>
+
+        <SafeAreaView style={{ flex: 1 }}>
 
             <View style={{ backgroundColor: '#FFFFFF', flexDirection: 'column', flex: 1 }}>
-                {/* header */}
+
                 <View style={{ flexDirection: 'row', marginLeft: 25, marginRight: 40, gap: 27, alignItems: 'center', justifyContent: 'space-between', marginTop: 40 }}>
                     <View >
                         <Text style={{ color: '#09051C', fontSize: 30, fontWeight: 'bold', fontStyle: 'normal', lineHeight: 38 }}>
@@ -83,7 +86,6 @@ const FilterFood = () => {
                     </TouchableOpacity>
                 </View>
 
-                {/* Nearest Restaurant */}
 
                  <TouchableOpacity style={styles.filterfoodbutton}>
                     <Text style={styles.soupElement}>Soup  X</Text>
@@ -107,9 +109,14 @@ const FilterFood = () => {
 
                 </View>
 
+                </View>
 
 
-                <View style={styles.buttonHomeContainer}>
+             
+
+
+
+            <View style={styles.buttonHomeContainer}>
                     <TouchableOpacity style={styles.homeButton}
                         onPress={() => navigation.navigate('HomePage')}
                     >
@@ -139,9 +146,8 @@ const FilterFood = () => {
                 </View>
 
 
-            </View>
+        </SafeAreaView>
 
-        </View>
     )
 }
 
@@ -160,12 +166,8 @@ const styles = StyleSheet.create({
             width: 0,
             height: 2,
         },
-        paddingHorizontal: 20,
-        fontSize: 16,
-        fontWeight: 'bold',
-        fontStyle: 'normal',
-        letterSpacing: 0.5,
-        marginBottom: 12,
+        paddingHorizontal: responsiveWidth(2),
+         marginBottom:responsiveHeight(2),
         borderRadius: 15,
         backgroundColor: '#FFFFFF'
 
@@ -174,15 +176,14 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'canter',
-        paddingVertical: 10,
-        marginTop: 10
+        paddingVertical: responsiveHeight(1),
     },
     ProccessButton: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        paddingHorizontal: 20,
-        height: 40,
+        paddingHorizontal: responsiveWidth(2),
+        height: responsiveHeight(5),
         borderRadius: 10
     },
     checkoutButton: {

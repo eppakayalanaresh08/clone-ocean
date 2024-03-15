@@ -16,6 +16,7 @@ import {
     responsiveWidth,
     responsiveFontSize
   } from "react-native-responsive-dimensions";
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const YourOrder = () => {
     const navigation = useNavigation();
@@ -38,14 +39,14 @@ const YourOrder = () => {
                     source={item.image}
                 />
                 <View>
-                    <Text style={{ fontSize: 15, fontWeight: 'bold', }}>Spacy fresh crab</Text>
-                    <Text>Waroenk kita</Text>
-                    <Text style={{ fontWeight: 'bold', color: '#15BE77' }}>$ 35</Text>
+                    <Text style={{ fontSize: responsiveFontSize(1.6), fontWeight: 'bold', }}>Spacy fresh crab</Text>
+                    <Text style={{ fontSize: responsiveFontSize(1.3)}}>Waroenk kita</Text>
+                    <Text style={{fontSize: responsiveFontSize(1.4), fontWeight: 'bold', color: '#15BE77' }}>$ 35</Text>
                 </View>
                 <TouchableOpacity 
         onPress={()=>navigation.navigate('OrderDetails')}
                 style={[styles.ProccessButton,{backgroundColor:`${item.buttonProcess}`}]}>
-                    <Text style={{color:'#ffffff',fontWeight:'bold'}}>Proccess</Text>
+                    <Text style={{color:'#ffffff',fontWeight:'bold',fontSize:responsiveFontSize(1.5)}}>Proccess</Text>
                 </TouchableOpacity>
             </View>
 
@@ -55,19 +56,20 @@ const YourOrder = () => {
 
 
     return (
-        <View style={{ flex: 1 }}>
+        <SafeAreaView style={{ flex: 1 }}>
+
 
             <View style={{ backgroundColor: '#FFFFFF', flexDirection: 'column', flex: 1 }}>
                 {/* header */}
-                <View style={{ flexDirection: 'row', marginLeft: 25, marginRight: 40, gap: 27, alignItems: 'center', justifyContent: 'space-between', marginTop: 40 }}>
+                <View style={{ flexDirection: 'row', marginHorizontal:responsiveWidth(5),  alignItems: 'center', justifyContent: 'space-between', marginTop: responsiveHeight(3) }}>
                     <View >
-                        <Text style={{ color: '#09051C', fontSize: 30, fontWeight: 'bold', fontStyle: 'normal', lineHeight: 38 }}>
+                        <Text style={{ color: '#09051C', fontSize: responsiveFontSize(3), fontWeight: 'bold', fontStyle: 'normal', lineHeight: responsiveHeight(3.5) }}>
                             Find Your {'\n'}Favorite Food
                         </Text>
 
                     </View>
                     <TouchableOpacity
-                        style={{ height: 45, width: 45, backgroundColor: '#FFFFFF', alignItems: 'center', justifyContent: 'center', borderRadius: 15 }}
+                        style={{ height: responsiveHeight(3),  backgroundColor: '#FFFFFF', alignItems: 'center', justifyContent: 'center', borderRadius: 15 }}
                         onPress={() => navigation.navigate('Notification')}
                     >
                         <Image
@@ -76,14 +78,14 @@ const YourOrder = () => {
                     </TouchableOpacity>
                 </View>
 
-                <View style={{ flexDirection: 'row', marginHorizontal: 20, marginTop: 20 }}>
-                    <View style={{ backgroundColor: '#fef6ed', borderRadius: 10, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', paddingRight: responsiveWidth(14), marginHorizontal: 3 }}>
+                <View style={{ flexDirection: 'row', marginHorizontal: responsiveWidth(6), marginTop: responsiveHeight(2) }}>
+                    <View style={{ backgroundColor: '#fef6ed', borderRadius: 10, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', paddingRight: responsiveWidth(14), marginRight:responsiveWidth(3) }}>
                         <Image
                             style={{  marginHorizontal: responsiveWidth(2) }}
                             source={require('./HomeAssets/IconSearch.png')}
                         />
                         <TextInput
-                            style={{ backgroundColor: '#fef6ed', fontSize: responsiveFontSize(2), fontWeight: 'normal', fontStyle: 'normal', color: '#ef9d68', borderRadius: 15 }}
+                            style={{ backgroundColor: '#fef6ed', fontSize: responsiveFontSize(1.8),paddingRight:responsiveWidth(4), fontWeight: 'normal', fontStyle: 'normal', color: '#ef9d68', borderRadius: 15}}
                             placeholder='What do you want to order?'
                             placeholderTextColor='#ef9d68'
                             onChangeText={text => setSearchText(text)}
@@ -102,7 +104,7 @@ const YourOrder = () => {
 
 
 
-                <View style={{marginTop:20,paddingHorizontal:10,marginHorizontal:responsiveWidth(2)}}>
+                <View style={{marginTop:responsiveHeight(2.5),paddingHorizontal:responsiveWidth(3),marginHorizontal:responsiveWidth(2)}}>
                     <FlatList
 
 
@@ -120,14 +122,14 @@ const YourOrder = () => {
                 {/* Nearest Restaurant list */}
 
             </View>
-            <View style={{position:'fixed',marginBottom:5}}>
+            <View style={{position:'fixed',marginBottom:responsiveHeight(2)}}>
             <TouchableOpacity style={styles.checkoutButton} onPress={()=>navigation.navigate('OrderDetails')}>
             <Text style={{color:'#ffffff',fontWeight:'bold'}}>Check Out</Text>
           </TouchableOpacity>
           </View>
 
 
-        </View>
+        </SafeAreaView>
     )
 }
 
@@ -139,19 +141,16 @@ const styles = StyleSheet.create({
         borderColor: '#F4F4F4',
 
         borderRadius: 15,
-        borderWidth: 2, shadowColor: '#F4F4F4', shadowOpacity: 0.25,
+        borderWidth: responsiveWidth(0.4), shadowColor: '#F4F4F4', shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5,
         shadowOffset: {
             width: 0,
             height: 2,
         },
-        paddingHorizontal: 20,
-        fontSize: 16,
-        fontWeight: 'bold',
-        fontStyle: 'normal',
-        letterSpacing: 0.5,
-        marginBottom: 12,
+        paddingHorizontal: responsiveWidth(2.5),
+        
+        marginBottom: responsiveHeight(1.5),
         borderRadius: 15,
 
     },
@@ -159,21 +158,20 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems:'canter',
-        paddingVertical: 10,
-        marginTop: 10
+        paddingVertical: responsiveHeight(1.2),
     },
     ProccessButton:{
         flexDirection:'row',
         justifyContent:'center',
         alignItems:'center',
-        paddingHorizontal:20,
-        height:40,
+        paddingHorizontal:responsiveWidth(2.5),
+        height:responsiveHeight(5),
         borderRadius:10
     },
     checkoutButton:{
         backgroundColor:'#15BE77',
-        paddingVertical:15,
-        marginHorizontal:20,
+        paddingVertical:responsiveHeight(1.8),
+        marginHorizontal:responsiveWidth(5),
         flexDirection:'row',
         justifyContent:'center',
         borderRadius:10

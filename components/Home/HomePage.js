@@ -204,8 +204,8 @@ export default HomePage
 
 const styles = StyleSheet.create({
     bgcontainerEachProduct: {
-        width:180,
-        height:200,
+        width:responsiveWidth(40),
+        height:responsiveHeight(25),
         borderColor: '#F4F4F4',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -219,9 +219,10 @@ const styles = StyleSheet.create({
             height: 2,
         },
         backgroundColor: '#FFFFFF',
-        paddingVertical: 20,
-        marginHorizontal: 10,
-        marginBottom:300
+        paddingVertical: responsiveHeight(2),
+        marginHorizontal: responsiveWidth(2),
+        marginBottom:responsiveHeight(200)
+
     },
 
     buttonHomeContainer: {
@@ -233,12 +234,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         backgroundColor: '#FFFFFF',
         shadowColor: '#FFFFFF',
-        marginHorizontal:10,
+        marginHorizontal:responsiveWidth(3),
         shadowRadius: 10,
         shadowOpacity: 0.6,
-        paddingVertical:10,
-        paddingHorizontal:30,
-        marginVertical:10,
+        paddingVertical:responsiveHeight(1.2),
+        paddingHorizontal:responsiveWidth(3.5),
+        marginVertical:responsiveHeight(1.5),
         borderRadius:10,
         elevation: 8,
         shadowOffset: {

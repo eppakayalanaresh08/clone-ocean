@@ -1,6 +1,7 @@
 import { Image, StatusBar, StyleSheet, Text, TextInput, TouchableHighlight, TouchableOpacity, View, ImageBackground} from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
+import { responsiveFontSize, responsiveHeight } from 'react-native-responsive-dimensions';
 
 const Voucher = () => {
     const navigation = useNavigation();
@@ -61,7 +62,7 @@ const Voucher = () => {
       
     </View>
     <TouchableOpacity
-            style={{ backgroundColor: '#15BE77',flexDirection:'row',justifyContent:'center', alignSelf: 'center', borderRadius: 20,minWidth:370 ,marginBottom:15}}
+            style={{ backgroundColor: '#15BE77',flexDirection:'row',justifyContent:'center', alignSelf: 'center', borderRadius: 20 ,marginBottom:15}}
             onPress={() => navigation.navigate("UserPaymentPage")}
         >
             <Text
@@ -78,15 +79,15 @@ export default Voucher
 const styles = StyleSheet.create({
     backgroundImage:{
         width:'100%',
-        paddingVertical:15,
+        paddingVertical:responsiveHeight(1),
         resizeMode:'cover'
     },
     TextVoucher:{
-        fontSize:20,
+        fontSize:responsiveFontSize(2),
         fontWeight:'bold',
         color:'#ffffff',
         marginLeft:200,
-        lineHeight:30
+        lineHeight:responsiveHeight(3)
     },
     buttonTextVoucher:{
       backgroundColor:'#ffffff',

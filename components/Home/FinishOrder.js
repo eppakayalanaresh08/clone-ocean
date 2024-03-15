@@ -3,6 +3,7 @@ import React from 'react'
 
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
+import { responsiveFontSize, responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
 
 const FinishOrder = () => {
     const navigation = useNavigation();
@@ -37,7 +38,7 @@ const FinishOrder = () => {
     
     <View style={styles.containerEditReview}>
             <Image 
-              style={{ marginLeft:20}}
+              style={{ marginLeft:responsiveWidth(5)}}
                 source={require('./HomeAssets/ReviewEditIcon.png')}
             />
                <TextInput
@@ -45,19 +46,19 @@ const FinishOrder = () => {
                             placeholder='Leave Feedback'
                             placeholderTextColor='#3B3B3B'
                         />
-            </View>
-            <View style={{flexDirection:'row',justifyContent:'space-around',alignItems:'center',marginTop:10,marginRight:10,marginBottom:5}}>
+    </View>
+            <View style={{flexDirection:'row',justifyContent:'space-around',alignItems:'center',marginVertical:responsiveHeight(1),marginHorizontal:responsiveWidth(5),}}>
             <LinearGradient colors={['#15BE77','#53E88B']}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 0 }} 
         style={{width:257,height:57,alignSelf: 'center',borderRadius: 20,justifyContent:'center',alignItems:'center',}}
         >
                 <TouchableOpacity style={styles.ButtonSubmit} onPress={()=>navigation.navigate('RateFood')}>
-                    <Text style={{color:'#FFFFFF',fontWeight:'bold',fontSize:18}}>Submit</Text>
+                    <Text style={{color:'#FFFFFF',fontWeight:'bold',fontSize:responsiveFontSize(2)}}>Submit</Text>
                 </TouchableOpacity>
               </LinearGradient>
                 <TouchableOpacity style={styles.SkipButtonElement} onPress={()=>navigation.navigate('RateFood')}>
-                    <Text style={{color:'#15BE77',fontWeight:'bold',fontSize:18}}>Skip</Text>
+                    <Text style={{color:'#15BE77',fontWeight:'bold',fontSize:responsiveFontSize(2)}}>Skip</Text>
                 </TouchableOpacity>
             </View>
 </View>
@@ -73,13 +74,13 @@ const styles = StyleSheet.create({
     alignItems:'center',
     borderColor:'#E8E8E8',
     borderWidth:1,
-    marginHorizontal:20,
+    marginHorizontal:responsiveWidth(5),
     paddingVertical:8,
     borderRadius:10
     },
 
     inputContainer: {
-        width:350,
+        width:responsiveWidth(80),
         fontSize: 16,
         fontWeight: 'bold',
         fontStyle: 'normal',
@@ -98,8 +99,8 @@ const styles = StyleSheet.create({
             width: 0,
             height: 2,
         },
-        paddingHorizontal:30,
-        paddingVertical:20,
+        paddingHorizontal:responsiveWidth(5),
+        paddingVertical:responsiveHeight(2),
         borderRadius:15
     }
 })

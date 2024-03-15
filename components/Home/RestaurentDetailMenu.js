@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
             height: 2,
         },
         paddingHorizontal: responsiveWidth(3),
-        marginVertical: 10
+        marginVertical: responsiveHeight(1.5)
 
     },
     favoriteheading: {
@@ -219,26 +219,25 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontStyle: 'normal',
 
-        marginLeft: 5
+        marginLeft: responsiveWidth(0.8)
 
 
     },
     TextReview: {
-        // marginHorizontal:10,
-        width: 200,
-        marginTop: 20
+        width: responsiveWidth(50),
+        marginTop: responsiveHeight(1.5)
 
     },
     headingProfilename: {
         color: '#09051C',
         fontSize: responsiveFontSize(2),
         fontWeight: 'bold',
-        marginTop: 20
+        marginTop: responsiveHeight(2)
     },
     paragraphfoodname: {
         color: '#3B3B3B',
-        fontSize: 14,
-        lineHeight: 20,
+        fontSize: responsiveFontSize(1.5),
+        lineHeight: responsiveHeight(2.2),
         fontWeight: '500'
 
     },

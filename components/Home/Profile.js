@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'rea
 import React from 'react'
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
+import { responsiveFontSize, responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
 
 
 const Profile = () => {
@@ -16,7 +17,7 @@ const Profile = () => {
             source={require('./HomeAssets/ProfilePhoto.png')}
         />
          
-        <View style={[styles.bgContainerProfile, { top: -60, paddingHorizontal: 30 }]}>
+        <View style={[styles.bgContainerProfile, { top: -60, paddingHorizontal: responsiveWidth(5) }]}>
            
                 <View style={{width:160, marginTop: 45,marginBottom:20,paddingHorizontal:30,paddingVertical:10, backgroundColor: '#ffeecf',borderRadius:15 }}>
                     <Text style={{color:'#FEAD1D',fontWeight:'bold',}}>Member Gold</Text>
@@ -180,7 +181,7 @@ const styles = StyleSheet.create({
              borderColor: '#F4F4F4',
      
              borderRadius: 15,
-             borderWidth: 2, shadowColor: 'rgba(149, 157, 165, 0.2)', shadowOpacity: 0.5,
+             borderWidth: responsiveWidth(0.5), shadowColor: 'rgba(149, 157, 165, 0.2)', shadowOpacity: 0.5,
              shadowRadius: 3.84,
              elevation: 5,
              shadowOffset: {
@@ -188,40 +189,40 @@ const styles = StyleSheet.create({
                  height: 2,
              },
              backgroundColor: '#FFFFFF',
-             paddingHorizontal: 5,
-             marginVertical: 15
-     
+             paddingHorizontal: responsiveWidth(1.5),
+             paddingVertical:responsiveHeight(1.5),
+             marginVertical: responsiveHeight(1.5),
          },
          favoriteheading: {
              color: '#09051C',
              fontWeight: 'bold',
-             fontSize: 20,
-             marginVertical: 20
+             fontSize: responsiveHeight(2.5),
+             marginVertical: responsiveHeight(2)
          },
          buttonBuy: {
              color: '#FFFFFF',
-             fontSize: 13,
+             fontSize: responsiveFontSize(1.5),
              fontWeight: 'bold',
              fontStyle: 'normal',
-             paddingVertical: 10
+             paddingVertical: responsiveHeight(1.2)
      
      
          },
          rupessname: {
              color: '#1DB46B',
-             fontSize: 23,
+             fontSize: responsiveFontSize(2),
              fontWeight: 'bold',
              fontStyle: 'normal',
          },
          headingfoodname: {
              color: '#09051C',
-             fontSize: 18,
+             fontSize: responsiveHeight(1.8),
              fontWeight: 'bold',
          },
          paragraphfoodname: {
              color: '#3B3B3B',
-             fontSize: 14,
-             lineHeight: 20,
+             fontSize: responsiveHeight(1.6),
+             lineHeight: responsiveHeight(2.2),
              fontWeight: '500'
      
          },

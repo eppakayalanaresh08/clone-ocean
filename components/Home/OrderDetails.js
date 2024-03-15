@@ -29,8 +29,8 @@ const OrderDetails = () => {
             <View style={styles.containerElement}>
                 <View style={styles.OrderInsideContainer}>
                     <Image source={item.image} />
-                    <View style={{width:responsiveWidth(40)}}>
-                        <Text style={{ fontSize: 15, fontWeight: 'bold' }}>{item.name}</Text>
+                    <View style={{width:responsiveWidth(40),marginLeft:responsiveWidth(1.2)}}>
+                        <Text style={{ fontSize: 15, fontWeight: 'bold', }}>{item.name}</Text>
                         <Text>Waroenk kita</Text>
                         <Text style={{ fontWeight: 'bold', color: '#15BE77' }}>$ 35</Text>
                     </View>
@@ -141,20 +141,16 @@ const styles = StyleSheet.create({
             height: 2,
         },
         backgroundColor: '#FFFFFF',
-        paddingHorizontal: 20,
-        fontSize: 16,
-        fontWeight: 'bold',
-        fontStyle: 'normal',
-        letterSpacing: 0.5,
-        marginBottom: 12,
+        paddingHorizontal: responsiveWidth(2),
+       
+        marginBottom: responsiveHeight(2),
         borderRadius: 15,
         marginHorizontal:responsiveWidth(5)
     },
     OrderInsideContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingVertical: 10,
-        marginTop: 10
+        paddingVertical: responsiveHeight(1),
     },
     DecrementContainer: {
         backgroundColor: '#E7F8F1',

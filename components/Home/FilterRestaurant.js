@@ -1,6 +1,7 @@
 import { Image, StatusBar, StyleSheet, Text, TextInput, TouchableHighlight, TouchableOpacity, View, FlatList, ScrollView } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
+import { responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
 
 
 
@@ -173,8 +174,8 @@ export default FilterRestaurant
 
 const styles = StyleSheet.create({
     bgcontainerEachProduct: {
-        width:180,
-        height:200,
+        width:responsiveWidth(41),
+        height:responsiveHeight(26),
         borderColor: '#F4F4F4',
         flexDirection: 'column',
         justifyContent: 'center',

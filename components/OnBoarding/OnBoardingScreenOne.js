@@ -14,11 +14,6 @@ const OnBoardingScreenOne = () => {
     const navigation = useNavigation();
 
     return (
-
-
-
-
-
         <View style={styles.container}>
             <View style={styles.imageElementContainer}>
                 <Image

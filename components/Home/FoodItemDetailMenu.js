@@ -3,6 +3,7 @@ import React from 'react'
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 
+import { responsiveFontSize, responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
 
 
 const FoodItemDetailMenu = () => {
@@ -18,7 +19,7 @@ const FoodItemDetailMenu = () => {
                         source={require('./HomeAssets/foodItem.png')}
                     />
 
-                    <View style={[styles.bgContainerProfile, { top: -85, paddingHorizontal: 30 }]}>
+                    <View style={[styles.bgContainerProfile, { top: -85, paddingHorizontal: responsiveWidth(2.7)}]}>
 
 
                         <View style={styles.nameEditContainer}>
@@ -171,8 +172,8 @@ const styles = StyleSheet.create({
             width: 0,
             height: 2,
         },
-        paddingHorizontal: 3,
-        marginVertical: 10
+        paddingHorizontal: responsiveWidth(2),
+        marginVertical: responsiveHeight(1.5)
 
     },
     favoriteheading: {
@@ -183,30 +184,29 @@ const styles = StyleSheet.create({
     },
     starname: {
         color: '#15BE77',
-        fontSize: 20,
+        fontSize: responsiveFontSize(2),
         fontWeight: 'bold',
         fontStyle: 'normal',
 
-        marginLeft: 5
+        marginLeft: responsiveWidth(0.8)
 
 
     },
     TextReview: {
-        // marginHorizontal:10,
-        width: 200,
-        marginTop: 20
+        width: responsiveWidth(50),
+        marginTop: responsiveHeight(1.5)
 
     },
     headingProfilename: {
         color: '#09051C',
-        fontSize: 18,
+        fontSize: responsiveFontSize(2),
         fontWeight: 'bold',
-        marginTop: 20
+        marginTop: responsiveHeight(2)
     },
     paragraphfoodname: {
         color: '#3B3B3B',
-        fontSize: 14,
-        lineHeight: 20,
+        fontSize: responsiveFontSize(1.5),
+        lineHeight: responsiveHeight(2.2),
         fontWeight: '500'
 
     },

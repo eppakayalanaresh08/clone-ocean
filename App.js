@@ -48,8 +48,8 @@ export default function App() {
   return (
     <NavigationContainer>
     <Stack.Navigator>
-      <Stack.Screen name="OnBoardingScreenOne" component={OnBoardingScreenOne} options={{ headerShown: false }} />
-      <Stack.Screen name="OnBoardingScreenTwo" component={OnBoardingScreenTwo} options={{ headerShown: false }}/>
+      {/* <Stack.Screen name="OnBoardingScreenOne" component={OnBoardingScreenOne} options={{ headerShown: false }} />
+      <Stack.Screen name="OnBoardingScreenTwo" component={OnBoardingScreenTwo} options={{ headerShown: false }}/> */}
 
       <Stack.Screen name="Login" component={SignInPage} options={{ headerShown: false }} />
       <Stack.Screen name="Signup" component={SignUpPage} options={{ headerShown: false }} />

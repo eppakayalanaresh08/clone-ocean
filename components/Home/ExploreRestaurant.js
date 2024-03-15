@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import axios from 'axios';
+import { responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
 
 
 const API_URL = 'https://jsonplaceholder.typicode.com/photos';
@@ -98,7 +99,7 @@ const ExploreRestaurant = () => {
 
                     </View>
 
-                    <View style={{flexDirection:'row',  marginHorizontal: 20 ,flexWrap:'wrap', width:'90%',}}>
+                    <View style={{flexDirection:'row',  marginHorizontal: responsiveWidth(3) ,flexWrap:'wrap', }}>
                         {/* <ScrollView >
                             <FlatList
                             style={{ flex:1, flexWrap:'wrap'}}
@@ -211,8 +212,8 @@ export default ExploreRestaurant
 
 const styles = StyleSheet.create({
     bgcontainerEachProduct: {
-        width: 170,
-        height: 200,
+        width: responsiveWidth(42),
+        height: responsiveHeight(28),
         borderColor: '#F4F4F4',
         flexDirection: 'column',
         justifyContent: 'center',
